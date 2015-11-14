@@ -3,7 +3,30 @@ import wx
 import methods
 
 
+class mainWindow(wx.Frame):
+    def __init__(self, parent, title):
+        wx.Frame.__init__(self, parent, title="RC Car Controler", size=(700,500))
 
+        menuBar = wx.MenuBar(0)
+        fileMenu = wx.Menu()
+        btn_sair = wx.MenuItem(fileMenu, wx.ID_ANY, "&Sair")
+        fileMenu.AppendItem(btn_sair)
+        menuBar.Append(fileMenu, "&Ficheiro")
+
+        self.SetMenuBar(menuBar)
+
+        self.Show(True)
+
+
+    ##Metodos das accoes dos botoes
+
+
+
+# MAIN
+if __name__ == "__main__":
+    app = wx.App(False)
+    frame = mainWindow(None, "RC Car Controller")
+    app.MainLoop()
 
 
 
