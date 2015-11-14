@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 import wx
-
 import methods
 
 
@@ -29,10 +28,6 @@ class mainWindow(wx.Frame):
         self.SetMenuBar(menuBar)
 
 
-
-
-
-
         #adiciona os metodos aos botoes
         self.Bind(wx.EVT_MENU, self.btnMenuSair_onClick, btnMenuSair)
         self.Bind(wx.EVT_MENU, self.btnMenuSobre_onClick, btnMenuSobre)
@@ -47,13 +42,7 @@ class mainWindow(wx.Frame):
         self.Close()
 
     def btnMenuSobre_onClick(self, event):
-        dialog = wx.MessageDialog(self, "Programa para controlar RC Car\n \n"
-                                        "Desenvolvido por: Miguel Rosa\n \n \n \n"
-                                        "Todos os direitos reservados\n \n"
-                                        "Mértola 2016",
-                                        "RC Car Controller - Sobre")
-        dialog.ShowModal()#Mostra a caixa de dialogo
-        dialog.Destroy() #destroi a caixa de dialogo
+        methods.aboutDialogMessage(self)
 
     def btnMenuWebSite_onClick(self, event):
         methods.openWebPageFromGitHub()
