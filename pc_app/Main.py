@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
 import wx
+
 import methods
 
 
 class mainWindow(wx.Frame):
     def __init__(self, parent, title):
-        wx.Frame.__init__(self, parent, title="RC Car Controler", size=(700,500))
+        wx.Frame.__init__(self, parent, title="RC Car Controller", size=(700,500))
 
         #Criar uma barra de menus e sub-menus
         menuBar = wx.MenuBar(0)
@@ -46,7 +47,11 @@ class mainWindow(wx.Frame):
         self.Close()
 
     def btnMenuSobre_onClick(self, event):
-        dialog = wx.MessageDialog(self, "Programa para controlar RC Car\n \nDesenvolvido por: Miguel Rosa\n \n \n \nTodos os direitos reservados\n \n \nMértola 2016", "RC Car Controller - Sobre")
+        dialog = wx.MessageDialog(self, "Programa para controlar RC Car\n \n"
+                                        "Desenvolvido por: Miguel Rosa\n \n \n \n"
+                                        "Todos os direitos reservados\n \n"
+                                        "Mértola 2016",
+                                        "RC Car Controller - Sobre")
         dialog.ShowModal()#Mostra a caixa de dialogo
         dialog.Destroy() #destroi a caixa de dialogo
 
