@@ -8,10 +8,29 @@ class mainWindow(wx.Frame):
         wx.Frame.__init__(self, parent, title="RC Car Controler", size=(700,500))
 
         menuBar = wx.MenuBar(0)
+
         fileMenu = wx.Menu()
-        btn_sair = wx.MenuItem(fileMenu, wx.ID_ANY, "&Sair")
+        btn_sair = wx.MenuItem(fileMenu, wx.ID_ANY, "&Sair") #Botao
         fileMenu.AppendItem(btn_sair)
         menuBar.Append(fileMenu, "&Ficheiro")
+
+        fileAbout = wx.Menu()
+        btn_sobre = wx.MenuItem(fileAbout, wx.ID_ANY, "S&obre") #Botao
+        fileAbout.AppendItem(btn_sobre)
+        btn_website = wx.MenuItem(fileAbout, wx.ID_ANY, "&Pagina oficial") #Botao
+        fileAbout.AppendItem(btn_website)
+        menuBar.Append(fileAbout, "&Sobre")
+
+
+        '''
+        wxglade_tmp_menu = wx.Menu()
+        wxglade_tmp_menu.Append(author, _("S&obre"), "", wx.ITEM_NORMAL)
+        wxglade_tmp_menu.Append(webpage, _("&Webpage"), "", wx.ITEM_NORMAL)
+        self.menubar.Append(wxglade_tmp_menu, _("&Sobre"))
+        self.SetMenuBar(self.menubar) '''
+
+
+
 
         self.SetMenuBar(menuBar)
 
