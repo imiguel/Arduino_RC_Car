@@ -8,7 +8,7 @@ def aboutDialogMessage(self):
                                     "Desenvolvido por: Miguel Rosa\n \n \n \n"
                                     "Todos os direitos reservados\n \n"
                                     "Mértola 2016",
-                                    "RC Car Controller - Sobre")
+                                    "RC Car Controller - Sobre", wx.OK)
     dialog.ShowModal()#Mostra a caixa de dialogo
     dialog.Destroy() #destroi a caixa de dialogo
 
