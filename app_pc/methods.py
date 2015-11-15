@@ -1,6 +1,13 @@
 # -*- coding: utf-8 -*-
-import webbrowser
 import wx
+import webbrowser
+import serial
+
+
+#apagar esta linha quando tiver o sensor bluetooth
+#serialPort = "/dev/cu.wchusbserial620"
+#serialPort2 = "/dev/ttyusb0"
+connectToArduino = serial.Serial("/dev/ttyUSB0", 9600)
 
 
 
@@ -23,3 +30,15 @@ def openWebPageFromGitHub():
     linkToPage = "https://imiguel.github.io/Arduino_RC_Car"
 
     webbrowser.open_new(linkToPage)
+
+
+
+#desligar o LED
+def testeDoBotaoOn():
+    print "BOTAO LIGAR CARREGADO"
+    connectToArduino.write('a1')
+
+
+def testeDoBotaoOff():
+    print "BOTAO DESLIGAR CARREGADO"
+    connectToArduino.write('a0')

@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import wx
 import methods
+import serial
 
 
 class mainWindow(wx.Frame):
@@ -28,6 +29,16 @@ class mainWindow(wx.Frame):
         self.SetMenuBar(menuBar)
 
 
+        self.label = wx.StaticText(self, label="BOTÕES PARA O LED", pos=(5, 80), style=wx.ALIGN_LEFT)
+
+
+        ##Coloca os botoes
+        buttonOn = wx.Button(self, pos=(20, 100), size=(100,25), id=wx.ID_ANY, label="LED ON")
+        buttonOn.Bind(wx.EVT_BUTTON, self.buttonOn_onClick)
+        buttonOff = wx.Button(self, pos=(20, 130), size=(100,25), id=wx.ID_ANY, label="LED OFF")
+        buttonOff.Bind(wx.EVT_BUTTON, self.buttonOff_onClick)
+
+
         #adiciona os metodos aos botoes
         self.Bind(wx.EVT_MENU, self.btnMenuSair_onClick, btnMenuSair)
         self.Bind(wx.EVT_MENU, self.btnMenuSobre_onClick, btnMenuSobre)
@@ -47,10 +58,16 @@ class mainWindow(wx.Frame):
     def btnMenuWebSite_onClick(self, event):
         methods.openWebPageFromGitHub()
 
+    def buttonOn_onClick(self, event):
+        methods.testeDoBotaoOn()
+
+    def buttonOff_onClick(self, event):
+        methods.testeDoBotaoOff()
+
 
 
 # MAIN
 if __name__ == "__main__":
-    app = wx.App(False)
+    app = wx.App()
     frame = mainWindow(None, "RC Car Controller")
     app.MainLoop()
