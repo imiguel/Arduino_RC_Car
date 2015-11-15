@@ -7,7 +7,7 @@ import serial
 #apagar esta linha quando tiver o sensor bluetooth
 #serialPort = "/dev/cu.wchusbserial620"
 #serialPort2 = "/dev/ttyusb0"
-connectToArduino = serial.Serial("/dev/ttyUSB0", 9600)
+#connectToArduino = serial.Serial("/dev/ttyUSB0", 9600)
 
 
 
@@ -35,10 +35,18 @@ def openWebPageFromGitHub():
 
 #desligar o LED
 def testeDoBotaoOn():
-    print "BOTAO LIGAR CARREGADO"
-    connectToArduino.write('a1')
+    print "BOTAO LED VERMELHO LIGADO"
+    #connectToArduino.write('a1')
 
 
 def testeDoBotaoOff():
-    print "BOTAO DESLIGAR CARREGADO"
-    connectToArduino.write('a0')
+    print "BOTAO LED VERMELHO DESLIGADO"
+    #connectToArduino.write('a0')
+
+
+def testeDoBotaoVerdeOn():
+    print "BOTAO LED VERDE LIGADO"
+
+
+def testeDoBotaoVerdeOff():
+    print "BOTAO LED VERDE DESLIGADO"

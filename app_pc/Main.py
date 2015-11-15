@@ -29,20 +29,26 @@ class mainWindow(wx.Frame):
         self.SetMenuBar(menuBar)
 
 
+        #Labels
         self.label = wx.StaticText(self, label="BOTÕES PARA O LED", pos=(5, 80), style=wx.ALIGN_LEFT)
+        self.label = wx.StaticText(self, label="BOTÕES PARA O LED VERDE", pos=(500, 80), style=wx.ALIGN_RIGHT)
 
 
         ##Coloca os botoes
         buttonOn = wx.Button(self, pos=(20, 100), size=(100,25), id=wx.ID_ANY, label="LED ON")
-        buttonOn.Bind(wx.EVT_BUTTON, self.buttonOn_onClick)
         buttonOff = wx.Button(self, pos=(20, 130), size=(100,25), id=wx.ID_ANY, label="LED OFF")
-        buttonOff.Bind(wx.EVT_BUTTON, self.buttonOff_onClick)
+        buttonVerdeOn = wx.Button(self, pos=(530, 100), size=(130,25), id=wx.ID_ANY, label="LED GREEN ON")
+        buttonVerdeOff = wx.Button(self, pos=(530, 130), size=(130,25), id=wx.ID_ANY, label="LED GREEN OFF")
 
 
         #adiciona os metodos aos botoes
         self.Bind(wx.EVT_MENU, self.btnMenuSair_onClick, btnMenuSair)
         self.Bind(wx.EVT_MENU, self.btnMenuSobre_onClick, btnMenuSobre)
         self.Bind(wx.EVT_MENU, self.btnMenuWebSite_onClick, btnMenuWebsite)
+        buttonOn.Bind(wx.EVT_BUTTON, self.buttonOn_onClick)
+        buttonOff.Bind(wx.EVT_BUTTON, self.buttonOff_onClick)
+        buttonVerdeOn.Bind(wx.EVT_BUTTON, self.buttonVerdeOn_onClick)
+        buttonVerdeOff.Bind(wx.EVT_BUTTON, self.buttonVerdeOff_onClick)
 
         #mostra a janela
         self.Show(True)
@@ -63,6 +69,12 @@ class mainWindow(wx.Frame):
 
     def buttonOff_onClick(self, event):
         methods.testeDoBotaoOff()
+
+    def buttonVerdeOn_onClick(self, event):
+        methods.testeDoBotaoVerdeOn()
+
+    def buttonVerdeOff_onClick(self, event):
+        methods.testeDoBotaoVerdeOff()
 
 
 
