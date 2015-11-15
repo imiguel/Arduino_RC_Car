@@ -7,7 +7,9 @@ import serial
 #apagar esta linha quando tiver o sensor bluetooth
 #serialPort = "/dev/cu.wchusbserial620"
 #serialPort2 = "/dev/ttyusb0"
+
 connectToArduino = serial.Serial("/dev/ttyUSB0", 9600)
+
 
 
 

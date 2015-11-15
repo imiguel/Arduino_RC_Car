@@ -34,10 +34,11 @@ class mainWindow(wx.Frame):
         self.label = wx.StaticText(self, label="BOTÕES PARA O LED VERDE", pos=(500, 80), style=wx.ALIGN_RIGHT)
 
 
+
         ##Coloca os botoes
         buttonOn = wx.Button(self, pos=(20, 100), size=(100,25), id=wx.ID_ANY, label="LED ON")
         buttonOff = wx.Button(self, pos=(20, 130), size=(100,25), id=wx.ID_ANY, label="LED OFF")
-        buttonBuzzer = wx.Button(self, pos=(20, 160), size=(100,25), id=wx.ID_ANY, label="BUZZER")
+        buttonBuzzer = wx.Button(self, pos=(20, 160), size=(100,25), id=wx.ID_ANY, label="BUZZER SUPER MARIO")
         buttonVerdeOn = wx.Button(self, pos=(530, 100), size=(130,25), id=wx.ID_ANY, label="LED GREEN ON")
         buttonVerdeOff = wx.Button(self, pos=(530, 130), size=(130,25), id=wx.ID_ANY, label="LED GREEN OFF")
 
