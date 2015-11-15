@@ -7,7 +7,7 @@ import serial
 #apagar esta linha quando tiver o sensor bluetooth
 #serialPort = "/dev/cu.wchusbserial620"
 #serialPort2 = "/dev/ttyusb0"
-#connectToArduino = serial.Serial("/dev/ttyUSB0", 9600)
+connectToArduino = serial.Serial("/dev/ttyUSB0", 9600)
 
 
 
@@ -28,7 +28,6 @@ def aboutDialogMessage(self):
 def openWebPageFromGitHub():
     #linkToPage = "https://github.com/imiguel/Arduino_RC_Car/wiki"
     linkToPage = "https://imiguel.github.io/Arduino_RC_Car"
-
     webbrowser.open_new(linkToPage)
 
 
@@ -36,17 +35,23 @@ def openWebPageFromGitHub():
 #desligar o LED
 def testeDoBotaoOn():
     print "BOTAO LED VERMELHO LIGADO"
-    #connectToArduino.write('a1')
+    connectToArduino.write('30')
 
 
 def testeDoBotaoOff():
     print "BOTAO LED VERMELHO DESLIGADO"
-    #connectToArduino.write('a0')
+    connectToArduino.write('31')
 
 
 def testeDoBotaoVerdeOn():
     print "BOTAO LED VERDE LIGADO"
+    connectToArduino.write('32')
 
 
 def testeDoBotaoVerdeOff():
     print "BOTAO LED VERDE DESLIGADO"
+    connectToArduino.write('33')
+
+def testeBuzzer():
+    print "BUZZER PRESSIONADO"
+    connectToArduino.write('34')
